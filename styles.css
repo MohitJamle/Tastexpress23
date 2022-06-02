@@ -994,8 +994,8 @@ header {
 }
 
 .comp8_content_box {
-  max-width: 1600px;
-  margin: auto;
+  max-width: 1410px;
+  /* margin: auto; */
 }
 
 .comp8_content {
@@ -1008,8 +1008,8 @@ header {
   flex: 0.3px;
   color: #666666;
   max-width: 400px;
-  margin: auto;
-  padding: 62px 10px;
+  /* margin: auto; */
+  padding: 62px 15px;
 }
 
 .comp8_Box_item1 h1 {
@@ -1042,6 +1042,8 @@ header {
   margin-left: 15px;
 }
 
+/* ================================================================= */
+
 .comp8_Box_item2 {
   flex: 0.7px;
   width: fit-content;
@@ -1049,31 +1051,52 @@ header {
 }
 
 .comp8_cardBox {
-  /* position: relative; */
+  position: relative;
   /* display: flex; */
-  margin-left: 60px;
-  overflow: visible;
+  margin-left: 40px;
+}
+
+.slick-prev {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border: none;
+}
+
+.slick-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  box-shadow: 1px 2px 10px 2px #d9d9d9;
+  position: absolute;
+  right: 0;
+  top: 40%;
+}
+
+.slick-next::before {
+  content: "›";
+  z-index: 20000;
+  font-size: 80px;
+  color: black;
+  position: absolute;
+  bottom: -17px;
+  left: 15px;
 }
 
 .comp8_card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-width: 400px;
+  /* max-width: 400px; */
   border: 1px solid lightgray;
   padding: 25px;
   padding-top: 30px;
   border-radius: 15px;
   margin: 10px 15px;
   cursor: pointer;
-}
-
-@media only screen and (min-width: 900px) {
-  .comp8_card {
-    max-width: 400px;
-    min-width: 200px;
-    width: 100%;
-  }
 }
 
 .comp8_card:hover {
@@ -1085,7 +1108,7 @@ header {
   font-family: "BIZ UDPGothic", sans-serif;
   color: #c3512f;
   margin: 0;
-  height: 70px;
+  height: 20px;
   width: fit-content;
   /* margin-left: -80px; */
 }
@@ -1124,104 +1147,6 @@ header {
   color: #545454;
 }
 
-.swiper-button-next {
-  padding: 30px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 1px 2px 10px 2px #d9d9d9;
-  z-index: 2000;
-}
-
-.nextButton {
-  font-size: 30px;
-  font-weight: 100;
-  height: fit-content;
-  padding: 10px 23px;
-  border-radius: 50%;
-  border: none;
-  background-color: white;
-  box-shadow: 1px 4px 15px 1px #d6d6d6;
-  cursor: pointer;
-  position: absolute;
-  right: 0px;
-  top: 42%;
-}
-
-.Dots {
-  display: flex;
-  width: fit-content;
-  margin: 50px auto;
-  position: absolute;
-  bottom: -135px;
-  left: 40%;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 2px solid rgb(163, 163, 163);
-}
-
-/* <<===========  SWIPER  =============>> */
-
-.swiper-pointer-events {
-  touch-action: pan-y;
-  max-width: 890px;
-  width: 64%;
-  min-height: 500px;
-  max-height: 500px;
-  margin: auto;
-}
-
-.swiper {
-  width: 100px;
-  height: 80%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  width: 500px;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 200%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swiper-wrapper {
-  position: relative;
-  width: 400px;
-  height: auto;
-  z-index: 1;
-  display: flex;
-  transition-property: transform;
-  box-sizing: content-box;
-}
-
-.swiper-button-prev {
-  display: none;
-  padding: 30px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 1px 2px 10px 2px #d9d9d9;
-  z-index: 2000;
-  overflow: hidden;
-}
-
-.swiper-button-next {
-  padding: 30px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 1px 2px 10px 2px #d9d9d9;
-  z-index: 2000;
-}
-
 @media only screen and (max-width: 1221px) {
   .comp8_Box_item1 h1 {
     font-size: 40px;
@@ -1229,36 +1154,17 @@ header {
   .comp8_content {
     flex-direction: column;
   }
-  .swiper-button-prev {
-    display: flex;
-  }
 }
 
 @media only screen and (max-width: 1192px) {
-  .comp8_cardBox {
-    margin-left: 60px;
-  }
 }
 
 @media only screen and (max-width: 900px) {
-  .swiper-button-next {
-    background-color: transparent;
-  }
-  .swiper-button-prev {
-    background-color: transparent;
-    box-shadow: none;
-  }
   .comp8_cardBox {
-    margin-left: 19px;
+    margin-left: 0px;
   }
   .comp8_Box_item1 h1 {
     font-size: 40px;
-  }
-  .comp8_card {
-    max-width: 365px;
-    min-width: 200px;
-    width: 100%;
-    margin-top: 0;
   }
   .car1 {
     font-size: 120px;
@@ -1269,28 +1175,16 @@ header {
   .comp8_card p {
     font-size: 20px;
   }
-  .swiper-pointer-events {
-    min-width: 400px;
-  }
+}
 
-  .swiper-button-next {
-    background-color: transparent;
-    box-shadow: none;
+@media only screen and (max-width: 400px) {
+  .comp8_card {
   }
 }
 
 @media only screen and (max-width: 400px) {
-  .swiper-button-prev {
-    display: none;
-  }
-  .swiper-button-next {
-    display: none;
-  }
   .comp8_Box_item1 h1 {
     font-size: 30px;
-  }
-  .comp8_cardBox {
-    margin-left: 0px;
   }
   .a {
     margin: 0 0px;
@@ -1301,15 +1195,9 @@ header {
   .c {
     margin: 0 0px;
   }
-  .swiper-pointer-events {
-    min-width: 300px;
-  }
 }
 
 @media only screen and (max-width: 300px) {
-  .swiper-pointer-events {
-    min-width: 200px;
-  }
 }
 
 /*  */

@@ -6,8 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- slick Cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +23,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- StyleSheet -->
   <link rel="stylesheet" href="./styles.css" />
   <title>Document</title>
@@ -39,7 +43,9 @@
       }
     }
 
+
     @media only screen and (max-width: 620px) {
+
       .comp2_grid {
         grid-template-columns: auto;
       }
@@ -317,46 +323,42 @@
             <button>Read More <span> → </span> </button>
           </div>
 
-          <div class="swiper mySwiper comp8_Box_item2">
+          <div class=" comp8_Box_item2" style="max-width: 890px; width: 98vw; ">
 
-            <div class="swiper-wrapper comp8_cardBox">
+            <div class=" comp8_cardBox">
 
-
-              <div class="a swiper-slide  comp8_card">
-                <span class="car1">“</span>
+              <div class="a comp8_card">
+                <span class="car1" style="height: 20px; width:20px; margin: 0;"><img style="width:54px"
+                    src="/Images/golden.png" alt=""></span>
                 <p>A great place to eat while travelling. Here, you the option south Indian food and
                   indian food
                   both. It has parking space also.</p>
                 <hr>
                 <div class="writer">-Margaret Berry</div>
               </div>
+
               <!-- <<=======================================>> -->
-              <div class="b swiper-slide comp8_card">
-                <span class="car2">“</span>
+              <div class="b comp8_card">
+                <span class="car2"><img style="width:54px" src="/Images/lined.png" alt=""></span>
                 <p>This place was very hygienic and good. The staff was very nice and you will
                   varieties dishes and
                   snacks to enjoy .</p>
                 <hr>
                 <div class="writer">-Andrew Feldman</div>
               </div>
+
               <!-- <<=======================================>> -->
-              <div class="c swiper-slide comp8_card">
-                <span class="car1">“</span>
+              <div class="a comp8_card">
+                <span class="car1" style="height: 20px; width:20px; margin: 0;"><img style="width:54px"
+                    src="/Images/golden.png" alt=""></span>
                 <p>A great place to eat while travelling. Here, you the option south Indian food and
                   indian food
                   both. It has parking space also.</p>
                 <hr>
-                <div class="writer">-Margaret Berry </div>
+                <div class="writer">-Margaret Berry</div>
               </div>
 
             </div>
-            <div class="swiper-button-next">
-
-            </div>
-            <div class="swiper-button-prev">
-
-            </div>
-            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
@@ -428,33 +430,42 @@
 
     <script src="script.js"></script>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
     <script>
-      var gridLength;
+      $('.comp8_cardBox').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false
+            }
+          },
 
-      if (window.innerWidth > 900) {
-        gridLength = 2;
-      } else if (window.innerWidth < 900) {
-        gridLength = 1;
-        console.log('first')
-      }
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: gridLength,
-        spaceBetween: 0,
-        slidesPerGroup: 1,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
+
+
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
       });
     </script>
+
 </body>
 
 </html>
