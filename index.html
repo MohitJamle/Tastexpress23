@@ -16,43 +16,61 @@
     href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
   <!-- StyleSheet -->
-
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
   <title>Document</title>
+
+  <style>
+    @media only screen and (max-width: 1000px) {
+      .comp2_grid {
+        grid-template-columns: auto auto;
+      }
+
+      .comp2_heading {
+        font-size: 45px;
+      }
+
+      .comp2_heading_text p {
+        font-size: 18px;
+      }
+    }
+
+    @media only screen and (max-width: 620px) {
+      .comp2_grid {
+        grid-template-columns: auto;
+      }
+
+      .comp2_heading {
+        font-size: 35px;
+      }
+
+      .comp2_heading_text p {
+        font-size: 17px;
+      }
+    }
+  </style>
+
 </head>
+
+
 
 <body>
   <nav class="padin20">
     <h1 class="logo">LOGO HERE</h1>
     <ul id="navMenu">
-      <a href="">
-        <li>Home</li>
-      </a>
-      <a href="">
-        <li> About Us </li>
-      </a>
-      <a href="">
-        <li> Presence </li>
-      </a>
-      <a href="">
-        <li> Opportunities </li>
-      </a>
-      <a href="">
-        <li> Careers </li>
-      </a>
-      <a href="">
-        <li> Contact Us </li>
-      </a>
+      <li><a href=""> Home </a></li>
+      <li><a href=""> About Us </a></li>
+      <li><a href=""> Presence </a></li>
+      <li><a href=""> Opportunities </a></li>
+      <li><a href=""> Careers </a></li>
+      <li><a href=""> Contact Us </a></li>
     </ul>
     <div class="hamburger_box" id="toggleNav">
-      <i class="fa fa-bars"></i>
+      <div class="hamburger">
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+      </div>
     </div>
   </nav>
 
@@ -297,11 +315,12 @@
             <button>Read More <span> → </span> </button>
           </div>
 
+          <div class="swiper mySwiper comp8_Box_item2">
 
-          <div class="comp8_Box_item2">
-            <div class="comp8_cardBox">
+            <div class="swiper-wrapper comp8_cardBox">
 
-              <div class="comp8_card ">
+
+              <div class="a swiper-slide  comp8_card">
                 <span class="car1">“</span>
                 <p>A great place to eat while travelling. Here, you the option south Indian food and
                   indian food
@@ -310,7 +329,7 @@
                 <div class="writer">-Margaret Berry</div>
               </div>
               <!-- <<=======================================>> -->
-              <div class="comp8_card">
+              <div class="b swiper-slide comp8_card">
                 <span class="car2">“</span>
                 <p>This place was very hygienic and good. The staff was very nice and you will
                   varieties dishes and
@@ -318,20 +337,28 @@
                 <hr>
                 <div class="writer">-Andrew Feldman</div>
               </div>
-
-              <button class="nextButton">❯</button>
-
-              <div class="Dots">
-                <div class="dot" style="width: 17px; height: 17px; margin-top: 6px; background-color: #666666;"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+              <!-- <<=======================================>> -->
+              <div class="c swiper-slide comp8_card">
+                <span class="car1">“</span>
+                <p>A great place to eat while travelling. Here, you the option south Indian food and
+                  indian food
+                  both. It has parking space also.</p>
+                <hr>
+                <div class="writer">-Margaret Berry </div>
               </div>
+
             </div>
+            <div class="swiper-button-next">
 
+            </div>
+            <div class="swiper-button-prev">
+
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
-
         </div>
       </div>
+
     </div>
 
     <footer>
@@ -399,10 +426,20 @@
 
     <script src="script.js"></script>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script>
+      var gridLength;
+
+      if (window.innerWidth > 900) {
+        gridLength = 2;
+      } else if (window.innerWidth < 900) {
+        gridLength = 1;
+        console.log('first')
+      }
       var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 2,
-        spaceBetween: 30,
+        slidesPerView: gridLength,
+        spaceBetween: 0,
         slidesPerGroup: 1,
         loop: true,
         loopFillGroupWithBlank: true,
