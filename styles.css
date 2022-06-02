@@ -1153,6 +1153,7 @@ header {
   }
   .comp8_content {
     flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -1161,7 +1162,8 @@ header {
 
 @media only screen and (max-width: 900px) {
   .comp8_cardBox {
-    margin-left: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
   }
   .comp8_Box_item1 h1 {
     font-size: 40px;
@@ -1179,6 +1181,8 @@ header {
 
 @media only screen and (max-width: 400px) {
   .comp8_card {
+    width: 60%;
+    border-right: 1.5px solid lightgray;
   }
 }
 
@@ -1187,13 +1191,13 @@ header {
     font-size: 30px;
   }
   .a {
-    margin: 0 0px;
+    margin: 5px 5px;
   }
   .b {
-    margin: 0 0px;
+    margin: 5px 5px;
   }
   .c {
-    margin: 0 0px;
+    margin: 5px 5px;
   }
 }
 
